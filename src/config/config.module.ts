@@ -17,6 +17,10 @@ import { AppConfigService } from './config.service';
         PORT: Joi.number().default(3000),
         DATABASE_URL: Joi.string().required(),
         REDIS_URL: Joi.string().required(),
+        JWT_PRIVATE_KEY: Joi.string().required(),
+        JWT_PUBLIC_KEY: Joi.string().required(),
+        JWT_ACCESS_EXPIRES_IN: Joi.number().default(900),
+        JWT_REFRESH_EXPIRES_IN: Joi.number().default(604800),
       }),
       validationOptions: {
         allowUnknown: true,

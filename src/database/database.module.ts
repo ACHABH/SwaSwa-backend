@@ -12,9 +12,8 @@ import { AppConfigService } from '../config/config.service';
         url: config.databaseUrl,
         // Entities are auto-loaded from all *.entity.ts files
         autoLoadEntities: true,
-        // TODO: Register your 8 PostgreSQL schemas here via the `schema` option on each entity
-        // e.g. @Entity({ name: 'users', schema: 'auth' })
-        synchronize: config.isDevelopment, // NEVER true in production
+        // Schema is defined in swaswa_schema.sql — never auto-sync
+        synchronize: false,
         logging: config.isDevelopment,
       }),
     }),
